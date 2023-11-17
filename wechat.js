@@ -1,5 +1,5 @@
 function showWechatQrcode() {
-  var qrcodeUrl = '/image/wechat_qrcode.png';  // 你的二维码图片的 URL
+  var qrcodeUrl = /image/wechat_qrcode.png;  // 你的二维码图片的 URL
   var img = document.createElement('img');
   img.src = qrcodeUrl;
   img.style.width = '100%';
