@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Datastruct | Klog</title>
+  <meta name="keywords" content="">
+  <meta name="description" content="Datastruct | Klog">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="数据结构学习内容基础概念 数据与数据结构的基本概念 抽象数据类型（Abstract Data Types, ADTs） 算法复杂度分析（Big O notation）  线性数据结构 数组（Array）  链表（Linked List）  单向链表（Singly Linked List）  1这是一个简单的单项列表创建以及其它操作  12345678910111213141516171819202">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Datastruct">
+<meta property="og:url" content="http://example.com/2024/03/25/Datastruct/index.html">
+<meta property="og:site_name" content="Klog">
+<meta property="og:description" content="数据结构学习内容基础概念 数据与数据结构的基本概念 抽象数据类型（Abstract Data Types, ADTs） 算法复杂度分析（Big O notation）  线性数据结构 数组（Array）  链表（Linked List）  单向链表（Singly Linked List）  1这是一个简单的单项列表创建以及其它操作  12345678910111213141516171819202">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2024-03-25T07:05:06.000Z">
+<meta property="article:modified_time" content="2024-03-10T05:14:37.940Z">
+<meta property="article:author" content="Pluviophile">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="icon" href="/img/touxiang.jpg">
+
+<link href="/css/style.css?v=1.1.0" rel="stylesheet">
+
+<link href="/css/hl_theme/atom-light.css?v=1.1.0" rel="stylesheet">
+
+<link href="//cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" rel="stylesheet">
+
+<script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<script src="/js/titleTip.js?v=1.1.0" ></script>
+
+<script src="//cdn.jsdelivr.net/npm/highlightjs@9.16.2/highlight.pack.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/jquery.cookie@1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.1.0" ></script>
+
+<meta name="generator" content="Hexo 7.1.1"></head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="">
+  <input class="theme_blog_path" value="">
+  <input id="theme_shortcut" value="true" />
+  <input id="theme_highlight_on" value="true" />
+  <input id="theme_code_copy" value="true" />
+</div>
+
+
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/"
+   class="avatar_target">
+    <img class="avatar"
+         src="/img/touxiang.ico"/>
+</a>
+<div class="author">
+    <span>Pluviophile</span>
+</div>
+
+<div class="icon">
+    
+        
+            <a title="github"
+               href="https://github.com/NicolasK1029"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-github"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="email"
+               href="mailto:nicolaskaikai3@gmail.com"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-email"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="qq"
+               href="http://wpa.qq.com/msgrd?v=3&uin=1468925113&site=qq&menu=yes"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-qq"></use>
+                    </svg>
+                
+            </a>
+        
+    
+</div>
+
+
+
+
+
+<ul>
+    <li>
+        <div class="all active" data-rel="All">All
+            
+                <small>(34)</small>
+            
+        </div>
+    </li>
+    
+        
+            
+                
+    <li>
+        <div data-rel="日记">
+            
+            日记
+            <small>(24)</small>
+        </div>
+        
+    </li>
+
+            
+        
+    
+        
+            
+                
+    <li>
+        <div data-rel="一些日常">
+            
+            一些日常
+            <small>(4)</small>
+        </div>
+        
+    </li>
+
+            
+        
+    
+        
+            
+                
+    <li>
+        <div data-rel="工具">
+            
+            工具
+            <small>(3)</small>
+        </div>
+        
+    </li>
+
+            
+        
+    
+        
+            
+                
+    <li>
+        <div data-rel="项目">
+            
+            项目
+            <small>(1)</small>
+        </div>
+        
+    </li>
+
+            
+        
+    
+        
+            
+                
+    <li>
+        <div data-rel="四大件">
+            
+            四大件
+            <small>(1)</small>
+        </div>
+        
+    </li>
+
+            
+        
+    
+        
+            
+                
+    <li>
+        <div data-rel="机器学习">
+            
+            机器学习
+            <small>(1)</small>
+        </div>
+        
+    </li>
+
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+        
+            
+            
+            
+    </div>
+    <div>
+        
+            <a class="about  hasFriend  site_url"
+               
+               href="/about">About</a>
+        
+        <a style="width: 50%"
+                
+                                           class="friends">Friends</a>
+        
+    </div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="34">
+
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        Links
+        <i class="iconfont icon-left"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="http://yelog.org/">叶落阁</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <div class="right-top">
+        <div id="default-panel">
+            <i class="iconfont icon-search" data-title="搜索 快捷键 i"></i>
+            <div class="right-title">All</div>
+            <i class="iconfont icon-file-tree" data-title="切换到大纲视图 快捷键 w"></i>
+        </div>
+        <div id="search-panel">
+            <i class="iconfont icon-left" data-title="返回"></i>
+            <input id="local-search-input" autocomplete="off"/>
+            <label class="border-line" for="input"></label>
+            <i class="iconfont icon-case-sensitive" data-title="大小写敏感"></i>
+            <i class="iconfont icon-tag" data-title="标签"></i>
+        </div>
+        <div id="outline-panel" style="display: none">
+            <div class="right-title">大纲</div>
+            <i class="iconfont icon-list" data-title="切换到文章列表"></i>
+        </div>
+    </div>
+
+    <div class="tags-list">
+    <input id="tag-search" />
+    <div class="tag-wrapper">
+        
+    </div>
+
+</div>
+
+    
+    <nav id="title-list-nav">
+        
+        
+        <a  class="All 四大件 "
+           href="/2024/03/25/Datastruct/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Datastruct">Datastruct</span>
+            <span class="post-date" title="2024-03-25 15:05:06">2024/03/25</span>
+        </a>
+        
+        
+        <a  class="All 日记 "
+           href="/2024/03/13/2024-3-13/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="2024-3-13">2024-3-13</span>
+            <span class="post-date" title="2024-03-13 00:00:00">2024/03/13</span>
+        </a>
+        
+        
+        <a  class="All 日记 "
+           href="/2024/03/06/2024-3-6/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="2024-3-6">2024-3-6</span>
+            <span class="post-date" title="2024-03-06 00:00:00">2024/03/06</span>
+        </a>
+        
+        
+        <a  class="All 日记 "
+           href="/2024/03/06/2024-3-7/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="2024-3-6">2024-3-6</span>
+            <span class="post-date" title="2024-03-06 00:00:00">2024/03/06</span>
+        </a>
+        
+        
+        <a  class="All 日记 "
+           href="/2024/03/06/2024-3-8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="2024-3-6">2024-3-6</span>
+            <span class="post-date" title="2024-03-06 00:00:00">2024/03/06</span>
+        </a>
+        
+        
+        <a  class="All 日记 "
+           href="/2024/03/06/2024-3-10/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="2024-3-6">2024-3-6</span>
+            <span class="post-date" title="2024-03-06 00:00:00">2024/03/06</span>
+        </a>
+        
+        
+        <a  class="All 日记 "
+           href="/2024/03/06/2024-3-12/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="2024-3-6">2024-3-6</span>
+            <span class="post-date" title="2024-03-06 00:00:00">2024/03/06</span>
+        </a>
+        
+        
+        <a  class="All 日记 "
+           href="/2024/03/06/2024-3-9/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="2024-3-6">2024-3-6</span>
+            <span class="post-date" title="2024-03-06 00:00:00">2024/03/06</span>
+        </a>
+        
+        
+        <a  class="All 日记 "
+           href="/2024/03/06/2024-3-11/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="2024-3-6">2024-3-6</span>
+            <span class="post-date" title="2024-03-06 00:00:00">2024/03/06</span>
+        </a>
+        
+        
+        <a  class="All 日记 "
+           href="/2024/03/05/2024-3-5/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="2024-3-5">2024-3-5</span>
+            <span class="post-date" title="2024-03-05 00:00:00">2024/03/05</span>
+        </a>
+        
+        
+        <a  class="All 日记 "
+           href="/2024/03/04/2024-3-4/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="2024-3-4">2024-3-4</span>
+            <span class="post-date" title="2024-03-04 00:00:00">2024/03/04</span>
+        </a>
+        
+        
+        <a  class="All 日记 "
+           href="/2024/03/03/2024-3-3/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="2024-3-3">2024-3-3</span>
+            <span class="post-date" title="2024-03-03 00:00:00">2024/03/03</span>
+        </a>
+        
+        
+        <a  class="All 日记 "
+           href="/2024/03/02/2024-3-2/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="2024-3-2">2024-3-2</span>
+            <span class="post-date" title="2024-03-02 00:00:00">2024/03/02</span>
+        </a>
+        
+        
+        <a  class="All 日记 "
+           href="/2024/03/01/2024-3-1/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="2024-3-1">2024-3-1</span>
+            <span class="post-date" title="2024-03-01 00:00:00">2024/03/01</span>
+        </a>
+        
+        
+        <a  class="All 日记 "
+           href="/2024/02/29/2024-2-29/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="2024-2-29">2024-2-29</span>
+            <span class="post-date" title="2024-02-29 00:00:00">2024/02/29</span>
+        </a>
+        
+        
+        <a  class="All 日记 "
+           href="/2024/02/28/2024-2-28/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="2024-2-28">2024-2-28</span>
+            <span class="post-date" title="2024-02-28 00:00:00">2024/02/28</span>
+        </a>
+        
+        
+        <a  class="All 日记 "
+           href="/2024/02/27/2024-2-27/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="2024-2-27">2024-2-27</span>
+            <span class="post-date" title="2024-02-27 00:00:00">2024/02/27</span>
+        </a>
+        
+        
+        <a  class="All 日记 "
+           href="/2024/02/26/2024-2-26/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="2024-2-26">2024-2-26</span>
+            <span class="post-date" title="2024-02-26 00:00:00">2024/02/26</span>
+        </a>
+        
+        
+        <a  class="All 一些日常 "
+           href="/2024/02/26/%E4%B8%80%E4%BA%9B%E8%B5%84%E6%96%99/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="资料">资料</span>
+            <span class="post-date" title="2024-02-26 00:00:00">2024/02/26</span>
+        </a>
+        
+        
+        <a  class="All 项目 "
+           href="/2024/02/25/fire_detection/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="fire_detection">fire_detection</span>
+            <span class="post-date" title="2024-02-25 15:05:06">2024/02/25</span>
+        </a>
+        
+        
+        <a  class="All 一些日常 "
+           href="/2024/02/25/dzumap/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="dzumap">dzumap</span>
+            <span class="post-date" title="2024-02-25 15:05:06">2024/02/25</span>
+        </a>
+        
+        
+        <a  class="All 机器学习 "
+           href="/2024/02/25/%E8%AE%A4%E7%9F%A5%E7%90%86%E8%A7%A3/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="认知理解">认知理解</span>
+            <span class="post-date" title="2024-02-25 13:28:36">2024/02/25</span>
+        </a>
+        
+        
+        <a  class="All 日记 "
+           href="/2024/02/25/2024-2-25/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="2024-2-25">2024-2-25</span>
+            <span class="post-date" title="2024-02-25 00:00:00">2024/02/25</span>
+        </a>
+        
+        
+        <a  class="All 日记 "
+           href="/2024/02/24/2024-2-24/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="2024-2-24">2024-2-24</span>
+            <span class="post-date" title="2024-02-24 12:51:21">2024/02/24</span>
+        </a>
+        
+        
+        <a  class="All 日记 "
+           href="/2024/02/24/2024-2-23/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="2024-2-23">2024-2-23</span>
+            <span class="post-date" title="2024-02-24 12:50:35">2024/02/24</span>
+        </a>
+        
+        
+        <a  class="All 日记 "
+           href="/2024/02/22/2024-2-22/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="2024-2-22">2024-2-22</span>
+            <span class="post-date" title="2024-02-22 13:29:45">2024/02/22</span>
+        </a>
+        
+        
+        <a  class="All 工具 "
+           href="/2024/02/22/Count/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Count">Count</span>
+            <span class="post-date" title="2024-02-22 13:28:36">2024/02/22</span>
+        </a>
+        
+        
+        <a  class="All 工具 "
+           href="/2024/02/22/out-world/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="out_world">out_world</span>
+            <span class="post-date" title="2024-02-22 00:01:43">2024/02/22</span>
+        </a>
+        
+        
+        <a  class="All 工具 "
+           href="/2024/02/21/pixpin/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="pixpin">pixpin</span>
+            <span class="post-date" title="2024-02-21 13:58:44">2024/02/21</span>
+        </a>
+        
+        
+        <a  class="All 日记 "
+           href="/2024/02/21/2024-2-21/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="2024-2-21">2024-2-21</span>
+            <span class="post-date" title="2024-02-21 13:14:44">2024/02/21</span>
+        </a>
+        
+        
+        <a  class="All 日记 "
+           href="/2024/02/20/2024-2-20/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="2024.2.20">2024.2.20</span>
+            <span class="post-date" title="2024-02-20 18:30:54">2024/02/20</span>
+        </a>
+        
+        
+        <a  class="All 日记 "
+           href="/2024/02/19/2024-2-19/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="2024.2.19">2024.2.19</span>
+            <span class="post-date" title="2024-02-19 18:30:54">2024/02/19</span>
+        </a>
+        
+        
+        <a  class="All 一些日常 "
+           href="/2023/11/16/all_my_people/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="all_my_people">all_my_people</span>
+            <span class="post-date" title="2023-11-16 15:05:06">2023/11/16</span>
+        </a>
+        
+        
+        <a  class="All 一些日常 "
+           href="/2023/11/16/the_sky/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Sky">Sky</span>
+            <span class="post-date" title="2023-11-16 15:05:06">2023/11/16</span>
+        </a>
+        
+        <div id="no-item-tips">
+
+        </div>
+    </nav>
+    <div id="outline-list">
+    </div>
+</div>
+
+    </div>
+    <div class="hide-list">
+        <div class="semicircle" data-title="切换全屏 快捷键 s">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div id="post">
+    <div class="pjax">
+        <article id="post-Datastruct" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">Datastruct</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="四大件">四大件</a>
+            
+        </span>
+        
+        
+    </div>
+    <div class="article-meta">
+        
+            Created At : <time class="date" title='Updated At: 2024-03-10 13:14:37'>2024-03-25 15:05</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        
+        <span id="busuanzi_container_page_pv">
+            Views 👀 :<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E5%86%85%E5%AE%B9"><span class="toc-text">数据结构学习内容</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5"><span class="toc-text">基础概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BA%BF%E6%80%A7%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84"><span class="toc-text">线性数据结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%91%E5%BD%A2%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84"><span class="toc-text">树形数据结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%BE%E5%BD%A2%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84"><span class="toc-text">图形数据结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%A3%E5%88%97"><span class="toc-text">散列</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8E%92%E5%BA%8F%E5%92%8C%E6%90%9C%E7%B4%A2%E7%AE%97%E6%B3%95"><span class="toc-text">排序和搜索算法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%AB%98%E7%BA%A7%E8%AF%9D%E9%A2%98%EF%BC%88%E5%8F%AF%E9%80%89%E6%88%96%E8%BF%9B%E9%98%B6%E5%AD%A6%E4%B9%A0%E5%86%85%E5%AE%B9%EF%BC%89"><span class="toc-text">高级话题（可选或进阶学习内容）</span></a></li></ol></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="数据结构学习内容"><a href="#数据结构学习内容" class="headerlink" title="数据结构学习内容"></a>数据结构学习内容</h1><h2 id="基础概念"><a href="#基础概念" class="headerlink" title="基础概念"></a>基础概念</h2><ul>
+<li>数据与数据结构的基本概念</li>
+<li>抽象数据类型（Abstract Data Types, ADTs）</li>
+<li>算法复杂度分析（Big O notation）</li>
+</ul>
+<h2 id="线性数据结构"><a href="#线性数据结构" class="headerlink" title="线性数据结构"></a>线性数据结构</h2><ul>
+<li><p><strong>数组（Array）</strong></p>
+</li>
+<li><p><strong>链表（Linked List）</strong></p>
+<ul>
+<li>单向链表（Singly Linked List）</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">这是一个简单的单项列表创建以及其它操作</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br></pre></td><td class="code"><pre><span class="line">#创建节点类</span><br><span class="line">class Node:		</span><br><span class="line">    def __init__(self, data):</span><br><span class="line">        self.data = data</span><br><span class="line">        self.next = None</span><br><span class="line"></span><br><span class="line">#链表操作类</span><br><span class="line">class LinkedList:</span><br><span class="line"></span><br><span class="line">    def __init__(self):</span><br><span class="line">        self.head = None</span><br><span class="line"></span><br><span class="line">#链表增加元素</span><br><span class="line">    def append(self, data):</span><br><span class="line">        new_node = Node(data)</span><br><span class="line"></span><br><span class="line">        if self.head == None:</span><br><span class="line">            self.head = new_node</span><br><span class="line">        else:</span><br><span class="line">            last = self.head</span><br><span class="line">            while last.next:</span><br><span class="line">                last = last.next</span><br><span class="line"></span><br><span class="line">            last.next = new_node</span><br><span class="line"></span><br><span class="line">#链表元素插入</span><br><span class="line">    def insert(self, index, data):</span><br><span class="line">        now = self.head</span><br><span class="line">        n = 1</span><br><span class="line">        new_node = Node(data)</span><br><span class="line"></span><br><span class="line">        if index == 1:</span><br><span class="line">            n = self.head</span><br><span class="line">            self.head = new_node</span><br><span class="line">            new_node.next = n</span><br><span class="line"></span><br><span class="line">        else:</span><br><span class="line">            while n != index - 1:</span><br><span class="line">                now = now.next</span><br><span class="line">                n = n + 1</span><br><span class="line">            m = now.next</span><br><span class="line">            now.next = new_node</span><br><span class="line">            new_node.next = m</span><br><span class="line"></span><br><span class="line">#链表元素删除</span><br><span class="line">    def cut(self, index):</span><br><span class="line">        n = 1</span><br><span class="line">        now = self.head</span><br><span class="line"></span><br><span class="line">        if index == n:</span><br><span class="line">            self.head = self.head.next</span><br><span class="line">        else:</span><br><span class="line">            while n != index - 1 and now.next:</span><br><span class="line">                now = now.next</span><br><span class="line">                n = n + 1</span><br><span class="line">            now.next = now.next.next</span><br><span class="line"></span><br><span class="line">#链表输出</span><br><span class="line">    def printf(self):</span><br><span class="line">        current = self.head</span><br><span class="line">        while current:</span><br><span class="line">            print(current.data)</span><br><span class="line">            current = current.next</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">A = LinkedList()</span><br><span class="line">A.append(1)</span><br><span class="line">A.append(2)</span><br><span class="line">A.append(2)</span><br><span class="line">A.append(4)</span><br><span class="line">A.append(5)</span><br><span class="line">A.insert(4, 3)</span><br><span class="line">A.cut(2)</span><br><span class="line">A.printf()</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>双向链表（Doubly Linked List）</li>
+<li>循环链表（Circular Linked List）</li>
+</ul>
+</li>
+<li><p><strong>栈（Stack）</strong></p>
+</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&quot;&quot;&quot;</span><br><span class="line">其实就是列表</span><br><span class="line">stack.append()  在末尾增加元素</span><br><span class="line">stack.pop()   弹出最后一个元素</span><br><span class="line"></span><br><span class="line">&quot;&quot;&quot;</span><br><span class="line">from pythonds.basic.stack import Stack</span><br><span class="line"></span><br><span class="line">stack = []</span><br><span class="line">a = Stack()</span><br><span class="line"></span><br><span class="line">stack.append(&#x27;1&#x27;)</span><br><span class="line">stack.append(&#x27;2&#x27;)</span><br><span class="line"></span><br><span class="line">print(stack.pop())</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>队列（Queue）</strong><ul>
+<li>优先队列（Priority Queue）</li>
+<li>双端队列（Deque）</li>
+</ul>
+</li>
+</ul>
+<h2 id="树形数据结构"><a href="#树形数据结构" class="headerlink" title="树形数据结构"></a>树形数据结构</h2><ul>
+<li><strong>二叉树（Binary Tree）</strong></li>
+<li><strong>二叉搜索树（Binary Search Tree, BST）</strong></li>
+<li><strong>平衡树（如AVL树、红黑树）</strong></li>
+<li><strong>堆（Heap）</strong></li>
+<li><strong>字典树（Trie）</strong></li>
+<li><strong>B树和B+树（用于数据库索引）</strong></li>
+</ul>
+<h2 id="图形数据结构"><a href="#图形数据结构" class="headerlink" title="图形数据结构"></a>图形数据结构</h2><ul>
+<li>图的概念和术语（节点、边、邻接等）</li>
+<li>有向图与无向图</li>
+<li>加权图与非加权图</li>
+<li>图的表示（邻接矩阵、邻接表）</li>
+<li>图的遍历（深度优先搜索DFS、广度优先搜索BFS）</li>
+<li>最短路径算法（如Dijkstra算法、A*算法）</li>
+<li>最小生成树（如Prim算法、Kruskal算法）</li>
+</ul>
+<h2 id="散列"><a href="#散列" class="headerlink" title="散列"></a>散列</h2><ul>
+<li>散列函数</li>
+<li>散列表（Hash Table）</li>
+<li>冲突解决策略（如链地址法、开放地址法、双散列）</li>
+</ul>
+<h2 id="排序和搜索算法"><a href="#排序和搜索算法" class="headerlink" title="排序和搜索算法"></a>排序和搜索算法</h2><ul>
+<li>基本排序算法（如冒泡排序、插入排序、选择排序）</li>
+<li>高级排序算法（如快速排序、归并排序、堆排序）</li>
+<li>搜索算法（如线性搜索、二分搜索）</li>
+</ul>
+<h2 id="高级话题（可选或进阶学习内容）"><a href="#高级话题（可选或进阶学习内容）" class="headerlink" title="高级话题（可选或进阶学习内容）"></a>高级话题（可选或进阶学习内容）</h2><ul>
+<li>动态编程</li>
+<li>贪心算法</li>
+<li>图算法（如网络流、最小割）</li>
+<li>随机化数据结构（如跳表）</li>
+<li>持久化数据结构</li>
+<li>并查集（Union-Find）</li>
+<li>分治算法</li>
+</ul>
+<hr>
+<p>掌握以上内容可以为理解和应用数据结构打下坚实的基础。</p>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论 </span>
+    </div>
+</article>
+
+
+
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">
+    ©2023-2027 Kaik
+</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full" data-title="切换全屏 快捷键 s"><span class="min "></span></button>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.1.0" ></script>
+
+<script src="/js/script.js?v=1.1.0" ></script>
+<script>
+    var img_resize = 'default';
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $("#post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+
+        /*高亮代码块行号*/
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+    #post .pjax article .article-entry>ol, #post .pjax article .article-entry>ul, #post .pjax article>ol, #post .pjax article>ul{
+        border: #e2dede solid 1px;
+        border-radius: 10px;
+        padding: 10px 32px 10px 56px;
+    }
+    #post .pjax article .article-entry li>ol, #post .pjax article .article-entry li>ul,#post .pjax article li>ol, #post .pjax article li>ul{
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    #post .pjax article .article-entry>ol>li, #post .pjax article .article-entry>ul>li,#post .pjax article>ol>li, #post .pjax article>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    #post .pjax article .article-entry li>ol>li, #post .pjax article .article-entry li>ul>li,#post .pjax article li>ol>li, #post .pjax article li>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+    .nav-right:before {
+        content: ' ';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.2;
+        background: url("https://i.loli.net/2019/07/22/5d3521411f3f169375.png");
+        background-repeat: no-repeat;
+        background-position: 50% 0;
+        -ms-background-size: cover;
+        -o-background-size: cover;
+        -moz-background-size: cover;
+        -webkit-background-size: cover;
+        background-size: cover;
+    }
+    
+
+    
+</style>
+
+
+
+
+
+
+
+</html>
