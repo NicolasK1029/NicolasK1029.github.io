@@ -14,7 +14,7 @@
       <title>一些日常 |  Klog</title>
   <meta name="generator" content="hexo-theme-ayer">
       
-      <link rel="shortcut icon" href="/favicon.ico" />
+      <link rel="shortcut icon" href="/ts.ico" />
        
 <link rel="stylesheet" href="/dist/main.css">
 
@@ -282,7 +282,7 @@
 <nav class="navbar">
   
   <div class="logo">
-    <a href="/"><img src="/images/ayer-side.svg" alt="Klog"></a>
+    <a href="/"><img src="/ts.ico" alt="Klog"></a>
   </div>
   
   <ul class="nav nav-main">
@@ -329,19 +329,9 @@
 <!-- #reward -->
 <div id="reward">
   <span class="close"><i class="ri-close-line"></i></span>
-  <p class="reward-p"><i class="ri-cup-line"></i>请我喝杯咖啡吧~</p>
+  <p class="reward-p"><i class="ri-cup-line"></i></p>
   <div class="reward-box">
     
-    <div class="reward-item">
-      <img class="reward-img" src="/images/alipay.jpg">
-      <span class="reward-type">支付宝</span>
-    </div>
-    
-    
-    <div class="reward-item">
-      <img class="reward-img" src="/images/wechat.jpg">
-      <span class="reward-type">微信</span>
-    </div>
     
   </div>
 </div>
@@ -568,42 +558,6 @@
 </style>
     
     
-<script>
-  const password = "kongweibo1029";
-  const lock_password = window.sessionStorage.getItem("lock_password");
-  console.log(password, lock_password);
-  if (lock_password !== password) {
-    Swal.fire({
-      title: "Please enter password",
-      input: "text",
-      inputAttributes: {
-        autocapitalize: "off",
-      },
-      showCancelButton: false,
-      showLoaderOnConfirm: true,
-      allowOutsideClick: false,
-      confirmButtonText: "Ok",
-    }).then((result) => {
-      console.log(result);
-      if (result.isConfirmed) {
-        console.log(password);
-        if (result.value === password) {
-          window.sessionStorage.setItem("lock_password", result.value);
-        } else {
-          Swal.fire({
-            icon: "error",
-            title: "Incorrect password, please try again",
-            confirmButtonText: "Ok",
-            allowOutsideClick: false,
-          }).then(() => {
-            window.location.reload();
-          });
-        }
-      }
-    });
-  }
-</script>
-
 
   </div>
 </body>

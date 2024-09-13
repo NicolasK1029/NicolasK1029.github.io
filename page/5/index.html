@@ -14,7 +14,7 @@
       <title> Klog</title>
   <meta name="generator" content="hexo-theme-ayer">
       
-      <link rel="shortcut icon" href="/favicon.ico" />
+      <link rel="shortcut icon" href="/ts.ico" />
        
 <link rel="stylesheet" href="/dist/main.css">
 
@@ -53,11 +53,6 @@
     <main class="content on">
       
 <section class="cover">
-    
-      
-      <a class="forkMe" href="https://github.com/Shen-Yu/hexo-theme-ayer"
-        target="_blank"><img width="149" height="149" src="/images/forkme.png"
-          class="attachment-full size-full" alt="Fork me on GitHub" data-recalc-dims="1"></a>
     
   <div class="cover-frame">
     <div class="bg-box">
@@ -152,6 +147,61 @@
     
     
     
+    
+    <article
+  id="post-2024-2-27"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h2 itemprop="name">
+  <a class="article-title" href="/2024/02/27/2024-2-27/"
+    >2024-2-27</a> 
+</h2>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2024/02/27/2024-2-27/" class="article-date">
+  <time datetime="2024-02-26T16:00:00.000Z" itemprop="datePublished">2024-02-27</time>
+</a> 
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E6%97%A5%E8%AE%B0/">日记</a>
+  </div>
+   
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  Here's something encrypted, password is required to continue reading. 
+      <a class="article-more-link" href="/2024/02/27/2024-2-27/"
+        >阅读更多...</a
+      >
+       
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
+
+   
+   
+  
+</article>
+
     
     <article
   id="post-2024-2-26"
@@ -698,61 +748,6 @@
 </article>
 
     
-    <article
-  id="post-2024-2-22"
-  class="article article-type-post"
-  itemscope
-  itemprop="blogPost"
-  data-scroll-reveal
->
-  <div class="article-inner">
-    
-    <header class="article-header">
-       
-<h2 itemprop="name">
-  <a class="article-title" href="/2024/02/22/2024-2-22/"
-    >2024-2-22</a> 
-</h2>
- 
-
-      
-    </header>
-     
-    <div class="article-meta">
-      <a href="/2024/02/22/2024-2-22/" class="article-date">
-  <time datetime="2024-02-22T05:29:45.000Z" itemprop="datePublished">2024-02-22</time>
-</a> 
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E6%97%A5%E8%AE%B0/">日记</a>
-  </div>
-   
-    </div>
-      
-    <div class="article-entry" itemprop="articleBody">
-       
-  Here's something encrypted, password is required to continue reading. 
-      <a class="article-more-link" href="/2024/02/22/2024-2-22/"
-        >阅读更多...</a
-      >
-       
-      <!-- reward -->
-      
-    </div>
-    
-
-    <!-- copyright -->
-    
-    <footer class="article-footer">
-       
-    </footer>
-  </div>
-
-   
-   
-  
-</article>
-
-    
   </article>
   
 
@@ -823,7 +818,7 @@
 <nav class="navbar">
   
   <div class="logo">
-    <a href="/"><img src="/images/ayer-side.svg" alt="Klog"></a>
+    <a href="/"><img src="/ts.ico" alt="Klog"></a>
   </div>
   
   <ul class="nav nav-main">
@@ -870,19 +865,9 @@
 <!-- #reward -->
 <div id="reward">
   <span class="close"><i class="ri-close-line"></i></span>
-  <p class="reward-p"><i class="ri-cup-line"></i>请我喝杯咖啡吧~</p>
+  <p class="reward-p"><i class="ri-cup-line"></i></p>
   <div class="reward-box">
     
-    <div class="reward-item">
-      <img class="reward-img" src="/images/alipay.jpg">
-      <span class="reward-type">支付宝</span>
-    </div>
-    
-    
-    <div class="reward-item">
-      <img class="reward-img" src="/images/wechat.jpg">
-      <span class="reward-type">微信</span>
-    </div>
     
   </div>
 </div>
@@ -1109,42 +1094,6 @@
 </style>
     
     
-<script>
-  const password = "kongweibo1029";
-  const lock_password = window.sessionStorage.getItem("lock_password");
-  console.log(password, lock_password);
-  if (lock_password !== password) {
-    Swal.fire({
-      title: "Please enter password",
-      input: "text",
-      inputAttributes: {
-        autocapitalize: "off",
-      },
-      showCancelButton: false,
-      showLoaderOnConfirm: true,
-      allowOutsideClick: false,
-      confirmButtonText: "Ok",
-    }).then((result) => {
-      console.log(result);
-      if (result.isConfirmed) {
-        console.log(password);
-        if (result.value === password) {
-          window.sessionStorage.setItem("lock_password", result.value);
-        } else {
-          Swal.fire({
-            icon: "error",
-            title: "Incorrect password, please try again",
-            confirmButtonText: "Ok",
-            allowOutsideClick: false,
-          }).then(() => {
-            window.location.reload();
-          });
-        }
-      }
-    });
-  }
-</script>
-
 
   </div>
 </body>
