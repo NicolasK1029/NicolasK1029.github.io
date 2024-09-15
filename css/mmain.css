@@ -1,6 +1,6 @@
 /* 主容器 */
 .outer {
-    padding: 40px;
+    padding: 15px 30px;
     background-color: #ffffff;
     color: #333;
     font-family: 'Segoe UI', 'Arial', sans-serif;
@@ -25,7 +25,7 @@
   /* 年份标题 */
   .archive-year-wrap {
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
   }
   
   .archive-year {
@@ -50,6 +50,7 @@
     flex-wrap: wrap;
     gap: 20px;
     justify-content: space-between;
+    height: 100vh; /* 将高度设置为整个屏幕 */
   }
   
   .archive-post {
@@ -57,10 +58,12 @@
     border: 1px solid #dee2e6;
     padding: 20px;
     border-radius: 8px;
-    flex-basis: calc(33.333% - 20px);
+    flex-basis: calc(20% - 20px); /* 调整为更小的比例 */
     margin-bottom: 20px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
+    text-align: center; /* 让文字居中 */
+}
+
   
   .archive-post:hover {
     transform: translateY(-5px);
@@ -92,12 +95,11 @@
   /* 响应式设计 */
   @media (max-width: 768px) {
     .archives {
-      flex-direction: column;
-      align-items: center;
+        flex-direction: column; /* 垂直排列 */
+        align-items: center;
     }
-  
+ 
     .archive-post {
-      flex-basis: 100%;
+        flex-basis: 100%; /* 占满整行 */
     }
-  }
-  
+}
