@@ -11,9 +11,9 @@
   }
 
   body {
-    background-color: #000000; /* 设置背景颜色 */
+    
     /* 或者设置背景图像 */
-    background-image: url('/images/background.jpg'); /* 设置背景图像 */
+    background-image: url('../images/cover1.jpg');
     background-size: cover; /* 覆盖整个页面 */
     background-position: center center; /* 图像居中 */
     background-attachment: fixed; /* 固定背景，不随滚动条滚动 */
@@ -25,7 +25,7 @@
     justify-content: flex-start; /* 主轴起始对齐 */
     align-items: center; /* 交叉轴居中对齐 */
     padding: 5px; /* 容器内边距 */
-    background-color: #000000; /* 容器背景颜色 */
+    background-color: rgba(255, 255, 255, 0); /* 完全透明的背景 */
   }
   
   .categories-box a {
@@ -33,11 +33,11 @@
     padding: 30px 45px; /* 添加内边距 */
     margin: 5px; /* 添加外边距 */
     background-color: #f8f8f8; /* 设置背景颜色 */
-    color: #333; /* 设置文字颜色 */
+    color: #f9f9f9; /* 设置文字颜色 */
     text-decoration: none; /* 去除下划线 */
     border-radius: 5px; /* 设置边框圆角 */
     transition: background-color 0.3s, color 0.3s; /* 添加颜色变化的过渡效果 */
-    background-image: linear-gradient(to right, #007bff, #0056b3);
+    background-image: linear-gradient(to right, #5ce54a, #8e7524);
   }
   
   .categories-box a:hover {
