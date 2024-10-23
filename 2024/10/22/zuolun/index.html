@@ -70,7 +70,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> Word count:</span>
-            <span class="post-count">0</span>
+            <span class="post-count">135</span>
         </span>
     </span>
 
@@ -92,7 +92,53 @@
   
     <div class="article-entry" itemprop="articleBody">
        
-   
+  <!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>左轮枪游戏</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' href='main.css'>
+    <style>
+        .custom-button {
+            width: 150px; /* 设置按钮宽度 */
+            height: 50px; /* 设置按钮高度 */
+            font-size: 18px; /* 设置字体大小 */
+            background-color: #007BFF; /* 设置背景颜色 */
+            color: white; /* 设置文字颜色 */
+            border: none; /* 去掉边框 */
+            border-radius: 5px; /* 设置圆角 */
+            cursor: pointer; /* 鼠标悬停时显示手形光标 */
+            margin: 10px; /* 设置外边距 */
+        }
+    </style>
+</head>
+<body>
+    <button class="new-button-class" onclick="revolver.shoot()">扣动扳机</button>
+    <script>
+        let revolver = {
+            bullets: 1,
+            capacity: 6,
+            shoot: function() {
+                if (this.bullets > 0) {
+                    document.body.innerHTML += "Bang!<br>";
+                    this.bullets--;
+                    document.body.innerHTML += `Bullets left: ${this.bullets}<br>`;
+                } else {
+                    document.body.innerHTML += "No bullets left. Reloading...<br>";
+                    this.reload();
+                }
+            },
+            reload: function() {
+                this.bullets = this.capacity;
+                document.body.innerHTML += `Reloading... Bullets now: ${this.bullets}<br>`;
+            }
+        };
+    </script>
+</body>
+</html>
+ 
       <!-- reward -->
       
     </div>
@@ -154,6 +200,15 @@
 
    
   <nav class="article-nav">
+    
+      <a href="/2024/10/23/main/" class="article-nav-link">
+        <strong class="article-nav-caption">上一篇</strong>
+        <div class="article-nav-title">
+          
+            (no title)
+          
+        </div>
+      </a>
     
     
       <a href="/2024/10/09/2024-10-9/" class="article-nav-link">

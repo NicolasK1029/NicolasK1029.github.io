@@ -164,6 +164,55 @@
       
         
           <article
+  id="post-main"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
+     
+    <div class="article-meta">
+      <a href="/2024/10/23/main/" class="article-date">
+  <time datetime="2024-10-23T11:53:29.664Z" itemprop="datePublished">2024-10-23</time>
+</a>    
+    </div>
+      
+    <div class="article-entry" itemprop="articleBody">
+       
+  .new-button-class {
+    background-color: #4CAF50; /* 绿色背景 */
+    color: white; /* 白色文字 */
+    padding: 10px 20px; /* 内边距 */
+    border: none; /* 无边框 */
+    border-radius: 5px; /* 圆角 */
+    cursor: pointer; /* 鼠标悬停时显示手形光标 */
+    font-size: 16px; /* 字体大小 */
+}
+
+.new-button-class:hover {
+    background-color: #45a049; /* 悬停时的背景颜色 */
+}
+ 
+      <!-- reward -->
+      
+    </div>
+    
+
+    <!-- copyright -->
+    
+    <footer class="article-footer">
+       
+    </footer>
+  </div>
+
+   
+   
+  
+</article>
+
+        
+          <article
   id="post-zuolun"
   class="article article-type-post"
   itemscope
@@ -180,7 +229,53 @@
       
     <div class="article-entry" itemprop="articleBody">
        
-   
+  <!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>左轮枪游戏</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' href='main.css'>
+    <style>
+        .custom-button {
+            width: 150px; /* 设置按钮宽度 */
+            height: 50px; /* 设置按钮高度 */
+            font-size: 18px; /* 设置字体大小 */
+            background-color: #007BFF; /* 设置背景颜色 */
+            color: white; /* 设置文字颜色 */
+            border: none; /* 去掉边框 */
+            border-radius: 5px; /* 设置圆角 */
+            cursor: pointer; /* 鼠标悬停时显示手形光标 */
+            margin: 10px; /* 设置外边距 */
+        }
+    </style>
+</head>
+<body>
+    <button class="new-button-class" onclick="revolver.shoot()">扣动扳机</button>
+    <script>
+        let revolver = {
+            bullets: 1,
+            capacity: 6,
+            shoot: function() {
+                if (this.bullets > 0) {
+                    document.body.innerHTML += "Bang!<br>";
+                    this.bullets--;
+                    document.body.innerHTML += `Bullets left: ${this.bullets}<br>`;
+                } else {
+                    document.body.innerHTML += "No bullets left. Reloading...<br>";
+                    this.reload();
+                }
+            },
+            reload: function() {
+                this.bullets = this.capacity;
+                document.body.innerHTML += `Reloading... Bullets now: ${this.bullets}<br>`;
+            }
+        };
+    </script>
+</body>
+</html>
+ 
       <!-- reward -->
       
     </div>
@@ -596,61 +691,6 @@
        
   Here's something encrypted, password is required to continue reading. 
       <a class="article-more-link" href="/2024/09/07/2024-9-7/"
-        >阅读更多...</a
-      >
-       
-      <!-- reward -->
-      
-    </div>
-    
-
-    <!-- copyright -->
-    
-    <footer class="article-footer">
-       
-    </footer>
-  </div>
-
-   
-   
-  
-</article>
-
-        
-          <article
-  id="post-2024-6-26"
-  class="article article-type-post"
-  itemscope
-  itemprop="blogPost"
-  data-scroll-reveal
->
-  <div class="article-inner">
-    
-    <header class="article-header">
-       
-<h2 itemprop="name">
-  <a class="article-title" href="/2024/06/26/2024-6-26/"
-    >2024-6-26</a> 
-</h2>
- 
-
-      
-    </header>
-     
-    <div class="article-meta">
-      <a href="/2024/06/26/2024-6-26/" class="article-date">
-  <time datetime="2024-06-25T16:00:00.000Z" itemprop="datePublished">2024-06-26</time>
-</a> 
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E6%97%A5%E8%AE%B0/">日记</a>
-  </div>
-   
-    </div>
-      
-    <div class="article-entry" itemprop="articleBody">
-       
-  Here's something encrypted, password is required to continue reading. 
-      <a class="article-more-link" href="/2024/06/26/2024-6-26/"
         >阅读更多...</a
       >
        
